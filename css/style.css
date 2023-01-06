@@ -5,7 +5,7 @@
   --color-light-white:#eeeeee;
   --color-dafk-white:#bdbdbd;
   --color-pink:#fe918d;
-  --color-dark-pink:#ff6863;
+  --color-dark-pink:rgb(0,42,117);
   --color-black:#4d4d4d;
   --color-dark-grey:#4d4d4d;
   --color-gray:#616161;
@@ -47,8 +47,16 @@ a{
   color: var(--color-white);
 }
 ul{
-  list-style: none;
   padding-left: 0;
+}
+li{
+  list-style: none;
+}
+button{
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: ;
 }
 
 /* Typography */
@@ -108,4 +116,27 @@ p {
 }
 .navber__item:hover{
   background-color: var(--color-pink);
+}
+/* Home */
+#home{
+  background:url("/imgs/backgroundimg1.png")center/cover no-repeat;
+  padding: 40px;
+  text-align: center;
+}
+.home__avatar{
+  whdth:250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 2px solid var(--color-white);
+}
+.home__title,
+.home__description{
+  color: var(--color-white);
+}
+.home__contact{
+  font-size: var(--font-regular);
+  font-weight: var(--weight-bold);
+  margin: 24px;
+  padding: 8px 12px;
+ 
 }
