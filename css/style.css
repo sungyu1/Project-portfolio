@@ -94,13 +94,23 @@ p {
 }
 /* Navber */
 #navbar{
+  width: 100%;
+  position: fixed;
   display: flex;
   justify-content:space-between;
-  background-color: var(--color-dark-blue);
+  background-color: transparent;
   align-items: center;
   color: var(--color-white);
   padding: 16px;
 }
+
+/* Naver-dark */
+#navbar.navbar--dark{
+  background-color: var(--color-dark-blue);
+  padding: 8px;
+  transition: all var(--animation-duration)ease-in-out;
+}
+
 .navber__menu{
   display: flex;
 }
@@ -138,6 +148,7 @@ p {
   background:url("/imgs/backgroundimg1.png")center/cover no-repeat;
   padding: 40px;
   text-align: center;
+  padding-top: 120px;
 }
 .home__avatar{
   width:250px;
@@ -411,7 +422,7 @@ p {
 
 
 
-/* for bolow 768px screen width */
+/* 스크린 사이즈가 768px 줄었을때 */
 @media screen and (max-width:768px){
   /* navbar */
   .naver__toggle-btn{
