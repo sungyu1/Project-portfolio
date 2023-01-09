@@ -11,7 +11,7 @@ document.addEventListener('scroll',()=>{
   }
 })
 
-// 클릭시 원하는곳으로 이동
+// navbar menu클릭시 원하는 곳으로 이동
 const naverMenu=document.querySelector('.navber__menu');
 naverMenu.addEventListener('click',(event)=>{
   const target =event.target;
@@ -19,7 +19,16 @@ naverMenu.addEventListener('click',(event)=>{
   if(link==null){
     return;
   }
-  console.log(event.target.dataset.link);
-  const scrolTo=document.querySelector(link);
-  scrolTo.scrollIntoView({behavior:'smooth'});
+  scrollIntoView(link);
 });
+
+// Contact 클릭시 원하는 곳으로 이동
+const homeContact=document.querySelector('.home__contact');
+homeContact.addEventListener('click',()=>{
+  scrollIntoView('#contact');
+})
+
+function scrollIntoView(selector){
+  const scrolTo=document.querySelector(selector);
+  scrolTo.scrollIntoView({behavior:'smooth'});
+}
