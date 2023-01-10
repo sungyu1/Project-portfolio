@@ -29,7 +29,7 @@ homeContact.addEventListener('click',()=>{
 })
 
 
-// 스크롤을 내리면 페이지가 투명하게 만들기
+// 스크롤을 내리면  home contact투명하게 만들기
 const navbarscroll=document.querySelector('#navbar')
 
 const home=document.querySelector('.home__container');
@@ -39,7 +39,21 @@ document.addEventListener('scroll',()=>{
 
 });
 
+// aroow-up 스클롤 버튼 클릭시 위로 이동
+const arrowUp=document.querySelector('.arrow-up');
+document.addEventListener('scroll',()=>{
+  if(window.scrollY>homeHeight/2){
+    arrowUp.classList.add('visible');
+  }else{
+    arrowUp.classList.remove('visible');
 
+  }
+});
+
+// 클릭시 위로이동
+arrowUp.addEventListener('click',()=>{
+  scrollIntoView('#home');
+});
 
 
 function scrollIntoView(selector){

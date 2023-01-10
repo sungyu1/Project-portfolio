@@ -421,6 +421,31 @@ p {
   transition: all var(--animation-duration)ease-in;
 }
 
+/* scroll */
+.arrow-up{
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  font-size: 50px;
+  width: 70px;
+  height: 70px;
+  color: var(--color-light-white);
+  background-color: var(--color-pink);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease-in;
+}
+
+.arrow-up.visible{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+
+
+
 
 
 /* 스크린 사이즈가 768px 줄었을때 */
