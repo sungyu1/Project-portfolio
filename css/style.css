@@ -101,28 +101,28 @@ p {
   background-color: transparent;
   align-items: center;
   color: var(--color-white);
-  padding: 3px;
+  padding: 16px;
   z-index: 1;
 
 }
 
-/* Naver-dark */
+/* Navbar-dark */
 #navbar.navbar--dark{
   background-color: var(--color-dark-blue);
   padding: 3px;
   transition: all var(--animation-duration)ease-in-out;
 }
 
-.navber__menu{
+.navbar__menu{
   display: flex;
 }
-.naver__logo{
+.navbar__logo{
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
   padding: 3px;
 
 }
-.navber__item{
+.navbar__item{
   padding: 8px 12px;
   margin: 0 4px;
   color: var(--color-white);
@@ -130,12 +130,12 @@ p {
   border: 1px solid transparent;
   border-radius: var(--size-boeder-redius);
 }
-.navber__item:hover{
+.navbar__item:hover{
   border-color: var(--color-white);
   background-color: var(--color-dark-pink);
 }
 
-.naver__toggle-btn{
+.navbar__toggle-btn{
   position: absolute;
   top: 24px;
   right: 32px;
@@ -365,16 +365,16 @@ p {
   transform: translateY(0px);
 }
 .project__description h3{
-  color: var(--color-white);
+  color: var(--color-orange);
 }
 .project__description h3:after{
   content: '' ;
   display: block;
   position: relative;
   left: 50%;
-  margin-left: -12px;
+  transform: translateX(-50%);
   margin-top: 8px ;
-  width: 25px;
+  width: 50px;
   height: 2px;
   background-color: var(--color-dark-white);
 }
@@ -457,26 +457,29 @@ p {
 }
 
 
-
-
-
-
-
 /* 스크린 사이즈가 768px 줄었을때 */
 @media screen and (max-width:768px){
   /* navbar */
-  .naver__toggle-btn{
+  .navbar__toggle-btn{
     display: block;
   }
   #navbar{
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--color-dark-blue);
   }
-  .navber__menu{
+  #navbar.navbar--dark{
+    padding: 16px;
+  }
+  .navbar__menu{
     flex-direction: column;
     text-align: center;
     width: 100%;
     display: none;
+  }
+
+  .navbar__menu.open{
+    display: block;
   }
 
   /* About */

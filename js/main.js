@@ -10,23 +10,30 @@ document.addEventListener('scroll',()=>{
     navbar.classList.remove('navbar--dark');
   }
 })
-
 // navbar menu클릭시 원하는 곳으로 이동
-const naverMenu=document.querySelector('.navber__menu');
-naverMenu.addEventListener('click',(event)=>{
+const navbarMenu=document.querySelector('.navbar__menu');
+navbarMenu.addEventListener('click',(event)=>{
   const target =event.target;
   const link=target.dataset.link;
   if(link==null){
     return;
   }
+  navbarMenu.classList.remove('open');
   scrollIntoView(link);
 });
 
+// navbar toggle 버튼 클릭시 메뉴보이기
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click',()=>{
+  navbarMenu.classList.toggle('open'); 
+});
+
+
 // Contact 클릭시 원하는 곳으로 이동
-const homeContact=document.querySelector('.home__contact');
-homeContact.addEventListener('click',()=>{
+const homeContactBtn=document.querySelector('.home__contact');
+homeContactBtn.addEventListener('click',()=>{
   scrollIntoView('#contact');
-})
+});
 
 
 // 스크롤을 내리면  home contact투명하게 만들기
@@ -89,10 +96,6 @@ workBtnContainer.addEventListener('click',(e)=>{
     projectCintainer.classList.remove('anim-out');
   },300);
 });
-
-
-
-
 
 
 function scrollIntoView(selector){
