@@ -39,7 +39,7 @@ document.addEventListener('scroll',()=>{
 
 });
 
-// aroow-up 스클롤 버튼 클릭시 위로 이동
+// 스크롤시 aroow-up 버튼 생성
 const arrowUp=document.querySelector('.arrow-up');
 document.addEventListener('scroll',()=>{
   if(window.scrollY>homeHeight/2){
@@ -50,10 +50,37 @@ document.addEventListener('scroll',()=>{
   }
 });
 
-// 클릭시 위로이동
+// arrow-up 버튼 클릭시 home 으로 이동
 arrowUp.addEventListener('click',()=>{
   scrollIntoView('#home');
 });
+
+// 프로젝트 이동
+const workBtnContainer = document.querySelector('.work__categories')
+const projectCintainer = document.querySelector('.work__projects')
+const projects = document.querySelectorAll('.project')
+workBtnContainer.addEventListener('click',(e)=>{
+  const filter=e.target.dataset.filter || e.target.parentNode.dataset.filter;
+  if(filter==null){
+    return;
+  }
+  projectCintainer.classList.add('anim-out');
+  setTimeout(()=>{
+    projects.forEach((project)=>{
+      console.log(project.dataset.type);
+      if(filter==='*'|| filter===project.dataset.type){
+        project.classList.remove('invisible')
+      }else{
+        project.classList.add('invisible')
+      }
+    });
+    projectCintainer.classList.remove('anim-out');
+  },300);
+});
+
+
+
+
 
 
 function scrollIntoView(selector){

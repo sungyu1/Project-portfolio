@@ -317,8 +317,16 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  opacity: 1;
+  transition: all var(--animation-duration)ease-out;
 }
-.projects{
+
+.work__projects.anim-out{
+  opacity: 0;
+  transform: scale(0.96)translateY(40px);
+}
+
+.project{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -327,6 +335,10 @@ p {
   height: 250px;
   margin: 2px;
   background-color: var(--color-light-white);
+}
+
+.project.invisible{
+  display: none;
 }
 .poroject__img{
   max-width: 100%;
@@ -346,7 +358,7 @@ p {
   transform: translateY(10px);
   transition: all var(--animation-duration)ease-in;
 }
-.projects:hover .project__description{
+.project:hover .project__description{
   opacity: 0.8;
   transform: translateY(0px);
 }
