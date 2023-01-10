@@ -101,14 +101,15 @@ p {
   background-color: transparent;
   align-items: center;
   color: var(--color-white);
-  padding: 16px;
+  padding: 3px;
   z-index: 1;
+
 }
 
 /* Naver-dark */
 #navbar.navbar--dark{
   background-color: var(--color-dark-blue);
-  padding: 8px;
+  padding: 3px;
   transition: all var(--animation-duration)ease-in-out;
 }
 
@@ -118,19 +119,20 @@ p {
 .naver__logo{
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
+  padding: 3px;
 
 }
 .navber__item{
   padding: 8px 12px;
   margin: 0 4px;
+  color: var(--color-white);
   cursor: pointer;
+  border: 1px solid transparent;
   border-radius: var(--size-boeder-redius);
 }
-.navber__item.active{
-  border: 1px solid var(--color-white);
-}
 .navber__item:hover{
-  background-color: var(--color-pink);
+  border-color: var(--color-white);
+  background-color: var(--color-dark-pink);
 }
 
 .naver__toggle-btn{
@@ -289,7 +291,7 @@ p {
   font-size: var(--font-regular);
   padding: 8px 48px;
 }
-.category__btn.active,
+.category__btn.selected,
 .category__btn:hover{
   background-color: var(--color-pink);
   color: var(--color-white);
