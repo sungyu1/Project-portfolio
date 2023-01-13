@@ -102,3 +102,9 @@ function scrollIntoView(selector){
   const scrolTo=document.querySelector(selector);
   scrolTo.scrollIntoView({behavior:'smooth'});
 }
+// 1. 모든 섹션 요소들을 가지고온다.
+
+// 2.IntrsectionObserver를 이용해서 모든 섹션들을 관찰한다.
+
+
+// 3.보여지는 섹션에 해당하는 메뉴 아이템을 활성화 시킨다.
