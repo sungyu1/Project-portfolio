@@ -4,15 +4,13 @@
   --color-white: #ffffff;
   --color-light-white: #eeeeee;
   --color-dark-white: #bdbdbd;
-  --color-pink: #fe918d;
-  /* --color-dark-blue:#002a75; */
-  --color-dark-blue:#4218D9;
-  --color-dark-pink: #ff6863;
+  --color-dark-blue:#2f4399;
+  --color-light-mint: #81c2ba;
   --color-dark-grey: #4d4d4d;
   --color-grey: #616161;
   --color-light-grey: #7c7979;
-  --color-blue: #73aace;
-  --color-yellow: #fff7d1;
+  --color-blue: #4861cf;
+  --color-beige: #f0e1cd;
   --color-orange: #feb546;
   --color-black: #000000;
 
@@ -132,7 +130,7 @@ p {
 }
 .navbar__item:hover{
   border-color: var(--color-white);
-  background-color: var(--color-dark-pink);
+  background-color: var(--color-light-mint);
 }
 
 .navbar__toggle-btn{
@@ -148,7 +146,7 @@ p {
 
 /* Home */
 #home{
-  background:url("/imgs/backgroundimg1.png")center/cover no-repeat;
+  background:url("/imgs/backgroundimg.png")center/cover no-repeat;
   padding: 40px;
   text-align: center;
   padding-top: 120px;
@@ -173,7 +171,7 @@ p {
   border-radius:var(--size-boeder-redius);  
 }
 .home__contact:hover{
-  background-color: var(--color-pink);
+  background-color: var(--color-light-mint);
 }
 /*Section common  */
 .section{
@@ -207,7 +205,7 @@ p {
   transition: all var(--animation-duration) ease;
 }
 .major__icon:hover i{
-  color: var(--color-pink);
+  color: var(--color-light-mint);
   transform: rotate(-30deg) scale(1.1);
 }
 .major__title, .major__description{
@@ -237,7 +235,7 @@ p {
 }
 /* skill */
 #skills{
-  background-color: var(--color-yellow);
+  background-color: var(--color-beige);
 }
 
 .skillset{
@@ -294,7 +292,7 @@ p {
 }
 .category__btn.selected,
 .category__btn:hover{
-  background-color: var(--color-pink);
+  background-color: var(--color-light-mint);
   color: var(--color-white);
 }
 .category__btn.active .category__count,
@@ -303,7 +301,7 @@ p {
   top:0;
 } 
 .category__count{
-  background-color: var(--color-orange);
+  background-color: var(--color-blue);
   border-radius:50%;
   color: var(--color-white);
   width: 24px;
@@ -410,7 +408,7 @@ p {
   color:var(--color-light-grey);
 }
 .testimonial__speech-bubble a{
-  color: var(--color-pink);
+  color: var(--color-dark-blue);
 }
 
 /* Contact */
@@ -445,7 +443,7 @@ p {
   width: 70px;
   height: 70px;
   color: var(--color-light-white);
-  background-color: var(--color-pink);
+  background-color: var(--color-blue);
   border-radius: 50%;
   opacity: 0;
   pointer-events: none;
