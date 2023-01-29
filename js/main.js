@@ -20,7 +20,7 @@ navbarMenu.addEventListener('click',(event)=>{
   }
   navbarMenu.classList.remove('open');
   scrollIntoView(link);
-  selectNavItem(target);
+  
 });
 
 // navbar toggle 버튼 클릭시 메뉴보이기
@@ -99,10 +99,6 @@ workBtnContainer.addEventListener('click',(e)=>{
 });
 
 
-function scrollIntoView(selector){
-  const scrolTo=document.querySelector(selector);
-  scrolTo.scrollIntoView({behavior:'smooth'});
-}
 // 1. 모든 섹션 요소들을 가지고 오기.
 const sectionIds=['#home','#about','#skills','#work','#contact'];
 const sections=sectionIds.map(id=>document.querySelector(id));
@@ -118,7 +114,11 @@ function selectNavItem(selected){
   selectedNavItem= selected;
   selectedNavItem.classList.add('active');
 }
-
+function scrollIntoView(selector){
+  const scrolTo=document.querySelector(selector);
+  scrolTo.scrollIntoView({behavior:'smooth'});
+  selectNavItem(navItems[sectionIds.indexOf(selector)])
+}
 // 2.IntrsectionObserver를 이용해서 모든 섹션들을 관찰한다.
 const observerOptions={
   root:null,
