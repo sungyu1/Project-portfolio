@@ -20,6 +20,7 @@ navbarMenu.addEventListener('click',(event)=>{
   }
   navbarMenu.classList.remove('open');
   scrollIntoView(link);
+  selectNavItem(target);
 });
 
 // navbar toggle 버튼 클릭시 메뉴보이기
@@ -102,9 +103,53 @@ function scrollIntoView(selector){
   const scrolTo=document.querySelector(selector);
   scrolTo.scrollIntoView({behavior:'smooth'});
 }
-// 1. 모든 섹션 요소들을 가지고온다.
+// 1. 모든 섹션 요소들을 가지고 오기.
+const sectionIds=['#home','#about','#skills','#work','#contact'];
+const sections=sectionIds.map(id=>document.querySelector(id));
+const navItems=sectionIds.map(id=>document.querySelector(`[data-link="${id}"]`));
+// 요소가 제대로 가지고 오는지 확인.
+// console.log(sections);
+// console.log(navItems);
+
+let selectedNavIndex=0;
+let selectedNavItem=navItems[0];
+function selectNavItem(selected){
+  selectedNavItem.classList.remove('active');
+  selectedNavItem= selected;
+  selectedNavItem.classList.add('active');
+}
 
 // 2.IntrsectionObserver를 이용해서 모든 섹션들을 관찰한다.
-
+const observerOptions={
+  root:null,
+  rootMargin:'0px',
+  threshold:0.3,
+};
+// 스크롤하면 나가는 About/ console.log 표시 
+const observerCallback=(entries,observer)=>{
+  entries.forEach(entry=>{
+    if(!entry.isIntersecting && entry.intersectionRatio > 0){
+      const index=sectionIds.indexOf(`#${entry.target.id}`);
+      
+      // console.log(index,entry.target.id)
+      // 스크롤이 아래로 되어서 페이지가 올라옴
+      if(entry.boundingClientRect.y<0){
+        selectedNavIndex=index+1;
+      }else{
+        selectedNavIndex=index-1;
+      }
+    }
+  });
+};
+const observer=new IntersectionObserver(observerCallback,observerOptions);
+sections.forEach(section=>observer.observe(section));
 
 // 3.보여지는 섹션에 해당하는 메뉴 아이템을 활성화 시킨다.
+ window.addEventListener('wheel',()=>{
+  if(window.scrollY===0){
+    selectedNavIndex=0;
+  }else if(window.scrollY + window.innerHeight === document.body.clientHeight){
+    selectedNavIndex=navItems.length-1;
+  }
+  selectNavItem(navItems[selectedNavIndex]);
+ });
