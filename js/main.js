@@ -10,6 +10,7 @@ document.addEventListener('scroll',()=>{
     navbar.classList.remove('navbar--dark');
   }
 })
+
 // navbar menu클릭시 원하는 곳으로 이동
 const navbarMenu=document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click',(event)=>{
