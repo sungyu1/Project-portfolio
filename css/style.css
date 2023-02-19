@@ -151,7 +151,7 @@ p {
 
 /* Home */
 #home{
-  background:url("imags/backgroundimg.png")center/cover no-repeat;
+  background:url("./imags/backgroundimg.png")center/cover no-repeat;
   padding: 40px;
   text-align: center;
   padding-top: 120px;
